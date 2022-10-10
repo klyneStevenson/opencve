@@ -199,6 +199,7 @@ Vulnerabilities (CVE)
                         <th>CVE</th>
                         <th>Vendors</th>
                         <th>Products</th>
+                        <th class="text-center">Created</th>   
                         <th class="text-center">Updated</th>
                         <th class="text-center">CVSS v2</th>
                         <th class="text-center">CVSS v3</th>
@@ -209,6 +210,7 @@ Vulnerabilities (CVE)
                                 cve.cve_id }}</strong></a></td>
                             <td class="col-md-3">{{ cve.vendors|vendors_excerpt|safe }}</td>
                             <td class="col-md-3">{{ cve.vendors|products_excerpt|safe }}</td>
+                            <td class="col-md-2 text-center">{{ cve.created_at.strftime('%Y-%m-%d') }}</td>
                             <td class="col-md-2 text-center">{{ cve.updated_at.strftime('%Y-%m-%d') }}</td>
                             {% if cve.json.impact.baseMetricV2 %}
                             <td class="col-md-1 text-center"><span
